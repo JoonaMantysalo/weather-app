@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { WeatherAPIResponse } from "../types/Weather.d";
 import axios from "axios";
+import { API_BASE_URL } from "../config";
 
 const useWeather = (city: string) => {
   const [weather, setWeather] = useState<WeatherAPIResponse | null>(null);
@@ -9,7 +10,7 @@ const useWeather = (city: string) => {
     const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
     try {
       const response = await axios.get<WeatherAPIResponse>(
-        `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&aqi=no`
+        `${API_BASE_URL}/current.json?key=${API_KEY}&q=${city}&aqi=no`
       );
       setWeather(response.data);
       console.log(response.data);

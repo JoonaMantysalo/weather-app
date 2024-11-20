@@ -20,7 +20,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
     <>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
+          <label htmlFor="weatherSearch" className="form-label">
             City
           </label>
           <input
@@ -32,7 +32,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           />
         </div>
         <button type="submit" className="btn btn-primary">
-          Get weather
+          Get Weather
         </button>
       </form>
     </>

@@ -5,7 +5,16 @@ interface DisplayWeatherProps {
 }
 
 const DisplayWeather = ({ weather }: DisplayWeatherProps) => {
-  return <>{weather && <h2>Temperature: {weather?.current.temp_c}</h2>}</>;
+  return (
+    <>
+      {weather && (
+        <div className="weather-display">
+          <h2>Temperature: {weather?.current.temp_c}°C</h2>
+          <img src={weather?.current.condition.icon} alt="Weather condition" />
+        </div>
+      )}
+    </>
+  );
 };
 
 export default DisplayWeather;
